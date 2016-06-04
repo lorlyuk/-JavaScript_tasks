@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+   </head>
+<body>  
+	<script type="text/javascript">
+	/* --------------------------------------------------------умова задачі №1-------------------------------------------
+
+	Збільшити ціну товару на 10 гривень, якщо вона (ціна) більша за 1000 грн */
+
+function myFunc (price) {
+   var sum = 0;
+      if ( price > 1000) {
+        sum = price + 10
+      }
+  return sum;
+}
+ function myFuncTest () {
+    var expectedValue = 1210;
+    var realValue = myFunc(1200);
+        if (expectedValue !== realValue){
+          console.log ("test failed");
+        return;
+       }
+    console.log ("test ok")
+  }
+
+/* якщо значення функції "мінусове" */
+
+function myFuncTest2 () {
+  var expectedValue = 0;
+  var realValue = myFunc(-10);
+      if (expectedValue !== realValue){
+        console.log ("test failed");
+      return;
+     }
+  console.log ("test ok")
+}
+
+/* якщо значення функції "нуль" */
+
+function myFuncTest3 () {
+  var expectedValue = 0;
+  var realValue = myFunc(0);
+      if (expectedValue !== realValue){
+        console.log ("test failed");
+      return;
+      }
+ console.log ("test ok")
+}
+/* якщо значення функції "менше 1000" */
+function myFuncTest4 () {
+  var expectedValue = 0;
+  var realValue = myFunc(900);
+      if (expectedValue !== realValue){
+        console.log ("test failed");
+      return;
+      }
+  console.log ("test ok")
+}
+
+
+/* -------------------------------------------------------умова задачі №2---------------------------------------
+
+  знайти всі числа кратні 4 починаючи з 10 до а у визначеному діапазоні */
+function test(a){
+     var res = [];
+        for (var i = 10; i < a; ++i){ 
+          if((i % 4) == 0){ 
+           res.push(i);     
+          } 
+       }
+  return res;
+}
+/* якщо значення a= 25 */
+function testTestfunction () {
+  var expectedValue = [12, 16, 20, 24];
+  var realValue = test(25);
+    console.log(realValue);
+      if (expectedValue.length !== realValue.length){
+        console.log ("test failed");
+      return;
+      }
+  console.log ("test ok")
+}
+
+/* якщо значення a= 0 */
+
+function testTestfunction2 () {
+  var expectedValue = [];
+  var realValue = test(0);
+    console.log(realValue);
+      if (expectedValue.length !== realValue.length){
+        console.log ("test failed");
+      return;
+      }
+  console.log ("test ok")
+ }
+
+/* якщо значення a= 10 */
+
+function testTestfunction3 () {
+  var expectedValue = [];
+  var realValue = test(10);
+    console.log(realValue);
+         if (expectedValue.length !== realValue.length){
+          console.log ("test failed");
+        return;
+         }
+  console.log ("test ok")
+ }
+ /* якщо значення a= 536 */
+function testTestfunction4 () {
+  var expectedValue = [12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 148, 152, 156, 160, 164, 168, 172, 176, 180, 184, 188, 192, 196, 200, 204, 208, 212, 216, 220, 224, 228, 232];
+  var realValue = test(235);
+    console.log(realValue);
+      if (expectedValue.length !== realValue.length){
+        console.log ("test failed");
+      return;
+      }
+  console.log ("test ok")
+ }
+
+/*------------------------------------------------------- умова задачі №3----------------------------------------------------
+
+  Даны натуральные числа от 1 до n. Найти сумму тех из них, которые делятся на 5 или на 7.*/
+
+  function suma (n){
+    var sum=0;
+      for (var i =1; i < n; ++i){
+         if((i % 5 ==0) || (i % 7 == 0)){
+            sum +=i;
+        }
+      } 
+      console.log ("Сума чисел в даному діапазоні =" + sum)
+    return sum;
+  }
+/* якщо значення a= -25 */
+function sumaTestfunc () {
+    var expectedValue = 0;
+    var realValue = suma(-25);
+      console.log(realValue);
+        if (expectedValue !== realValue){
+            console.log ("test failed");
+        return;
+        }
+  console.log ("test ok")
+ }
+
+/* якщо значення a = -0 */
+function sumaTestfunc2 () {
+  var expectedValue = 0;
+  var realValue = suma(0);
+    console.log(realValue);
+      if (expectedValue !== realValue){
+          console.log ("test failed");
+      return;
+      }
+  console.log ("test ok")
+ }
+
+/* якщо значення a = 10 */
+
+function sumaTestfunc3 () {
+  var expectedValue = 12;
+  var realValue = suma(10);
+    console.log(realValue);
+      if (expectedValue !== realValue){
+          console.log ("test failed");
+       return;
+      }
+  console.log ("test ok")
+ }
+ /* якщо значення a = 210 */
+
+function sumaTestfunc4 () {
+  var expectedValue = 6825;
+  var realValue = suma(210);
+      console.log(realValue);
+         if (expectedValue !== realValue){
+            console.log ("test failed");
+         return;
+         }
+  console.log ("test ok")
+ }
+
+
+ /* ----------------------------------------------------умова задачі №4-----------------------------------------------------
+ 
+  Напечатать те из  чисел которые делятся на 4, но не делятся на 6.*/
+
+function myFunc (n) {
+  var arr = [];
+  for(var i = 10; i < n; ++i){ 
+    if((i % 4) == 0){ 
+      if(!(i % 6 == 0)){ 
+        arr.push(i); 
+      } 
+    } 
+  }
+  return arr;
+ } 
+
+/* якщо значення n = -26 */
+
+function myFuncTestFunc () {
+  var expectedValue = [];
+  var realValue = myFunc (-26);
+      console.log (realValue);
+    if (expectedValue.length !== realValue.length){
+        console.log ("test failed");
+      return;
+    }
+  console.log ("test ok")
+}
+
+/* якщо значення n = 0 */
+
+function myFuncTestFunc2 () {
+  var expectedValue = [];
+  var realValue = myFunc (0);
+      console.log (realValue);
+    if (expectedValue.length !== realValue.length){
+      console.log ("test failed");
+      return;
+    }
+  console.log ("test ok")
+}
+
+/* якщо значення n = 35 */
+
+function myFuncTestFunc3 () {
+  var expectedValue = [16, 20, 28, 32];
+  var realValue = myFunc (35);
+      console.log (realValue);
+    if (expectedValue.length !== realValue.length){
+      console.log ("test failed");
+      return;
+    }
+  console.log ("test ok")
+}
+
+/* якщо значення n = 135 */
+
+function myFuncTestFunc4 () {
+  var expectedValue = [16, 20, 28, 32, 40, 44, 52, 56, 64, 68, 76, 80, 88, 92, 100, 104, 112, 116, 124, 128];
+  var realValue = myFunc (135);
+  console.log (realValue);
+    if (expectedValue.length !== realValue.length){
+      console.log ("test failed");
+      return;
+    }
+  console.log ("test ok")
+}
+
+	 </script>
+</body>
+</html>
