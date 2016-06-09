@@ -559,10 +559,77 @@ function taskphp7() {
 			document.write(" <br>");
 			document.write("php7.Створити скрипт який порахує ваш середній бал за попередні курси в академії <br>");
 			document.write(" <br>");
+			var marks = [8, 10, 10, 8, 9, 10, 8, 11, 10];
+			var sum = 0;
+				for (i =0; i < marks.length; i++){
+					sum += marks[i];
+				}
+			document.write("Середній бал студента " + (sum/marks.length));
+	}
 
 
+function taskphp8() {
+			document.write(" <br>");
+			document.write("Створити скрипт, який заповнить рандомними числами від -100 до 100 масив розміром 100 елементів. Порахувати кількість від’ємних, додатніх чисел та нулів.");
+			document.write(" <br>");
+		var arr = [];
+		var positiveNumbers = 0;
+		var negativeNumbers = 0;
+		var zero = 0;
+		var a = 0;
+		function myFunction(a) { 
 
 
+		}
+				   for (i= -100; i <= 100; i++){
+
+		   }
+}
+
+function taskphp9() {
+	document.write(" <br>");
+	document.write("php9.Створити скрипт, який розбирає даний масив на нові в яких будуть тільки однорідні типи $array = array(1, 0, ‘0’, 33, ‘hello’, true, false, ‘bye’, 20., 0.35, ‘ZR’, ‘a’);");	
+	document.write(" <br>");
+	var arrNumber = [];
+	var arrBoolean = [];
+	var arrString = [];
+	var array = [1, 0, '0', 33, 'hello', true, false, 'bye', 20., 0.35, 'ZR', 'a'];
+		for (var i = 0; i < array.length; i++) {
+			if (typeof array[i] == "number") {
+					arrNumber.push(array[i]);
+			} else if (typeof array[i] == "boolean") {
+				arrBoolean.push(array[i]);
+			} else {
+				arrString.push(array[i]);
+			}
+		}
+	document.write(arrNumber);
+	document.write(" <br>");
+	document.write(arrBoolean);
+	document.write(" <br>");
+	document.write(arrString);
+	document.write(" <br>");
+}
+
+function taskphp10() {
+	document.write(" <br>");
+	document.write("Створити скрипт, який порахує кількість учасників роду від 1720 і до cьогоні, якщо у роді кількість новонароджений визначалась такими критеріями(критерії відсортовані за приорітетом), в 1720 рід налічував 16 учасників:в роки кратні п’яти дітей народжувалось 5в роки кратні 3 дітей народжувалось 4;в непарні роки дітей народжувалось 3: всі інші 1/дитина на сім’ю");
+	document.write(" <br>");
+	var family = 16;
+					for (var i = 1721; i <= 2016; i++) {
+						if (i % 5 == 0) {
+							family += 5;
+						} else if (i % 3 == 0) {
+							family += 4;
+						} else if (i % 2 == 0) {
+							family += 3;
+						} else {
+							family += 1;
+						}
+					}
+		document.write(family);
+
+}
 
  </script>
 </body>
