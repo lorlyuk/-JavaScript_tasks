@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <title>JS Task 1</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+				<h1>Всемирный институт им. Лабутяна</h1>
+				<h2>
+					Поиск по имени студента
+				</h2>	
+				<p>Введите имя:</p>
+				<input type="text" id="name"/>					
+				<br/>
+				<a class="clickFN">
+					<div class="lineText">
+						<p>Показать результат</p>
+					</div>
+				</a>
+				<div class="foundText">
+					<table class="foundTable"></table>
+				</div>
+				
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+				<h2>Список студентов</h2>
+				<a class="click">
+					<div class="lineText">
+						<p>Развернуть</p>
+					</div>
+				</a>
+				<div class="foundText">					
+					<table class="foundStudentsTable"></table>
+				</div>		
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+				<h2>Статистика</h2>
+				<a class="clickS">
+					<div class="lineText">
+						<p>Развернуть</p>
+					</div>
+				</a>
+				<div class="foundText">					
+					<div class="groupStatistic">						
+					</div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+ <script type="text/javascript">
+ var academy = (function (){
+ var students = [
+ {
+     firstName: "Андрій", 
+    secondName: "Іванов", 
+     groupName: "1", 
+        biology: ["нб",2,5,8,7,5,6,0,5,0], 
+        english: [0,2,5,8,7,5,6,"нб",5,0], 
+          music: ["нб",2,5,8,7,5,6,0,5,0],
+      chemistry: ["нб",2,5,8,7,5,6,"нб",5,0],
+        physics: [0,2,5,8,7,5,6,"нб",5,0]
+},
+ {
+     firstName: "Василь", 
+    secondName: "Баранов", 
+     groupName: "1", 
+        biology: [0,2,5,8,7,5,6,"нб",5,0], 
+        english: [0,2,5,8,7,5,6,0,5,0], 
+          music: ["нб",2,5,8,7,5,6,0,5,0],
+      chemistry: [0,2,5,8,7,5,6,0,5,0],
+        physics: [0,2,5,8,7,5,6,"нб",5,0]
+},
+ {
+     firstName: "Петро", 
+    secondName: "Гриб", 
+     groupName: "1", 
+        biology: ["нб",2,5,8,7,5,6,0,5,0], 
+        english: [0,2,5,8,7,5,6,0,5,0], 
+          music: [0,2,5,8,7,5,6,"нб",5,0],
+      chemistry: [0,2,5,8,7,5,6,0,5,0],
+        physics: [0,2,5,8,7,5,6,0,5,"нб"]
+},
+ {
+     firstName: "Боб", 
+    secondName: "Лис", 
+     groupName: "1", 
+        biology: [0,2,5,8,7,5,6,0,5,0], 
+        english: ["нб",2,5,8,7,5,6,0,5,0], 
+          music: [0,2,5,8,7,5,6,0,5,"нб"],
+      chemistry: ["нб",2,5,8,7,5,6,0,5,0],
+        physics: [0,2,5,8,7,5,6,0,5,0]
+},
+ {
+     firstName: "Антоніна", 
+    secondName: "Вовк", 
+     groupName: "1", 
+        biology: [0,2,5,8,7,5,6,0,5,"нб"], 
+        english: [0,2,5,8,7,5,6,0,5,0], 
+          music: ["нб",2,5,8,7,5,6,0,5,0],
+      chemistry: [0,2,5,8,7,5,6,0,5,0],
+        physics: [0,2,5,8,7,5,6,0,5,0]
+},
+{
+     firstName: "Євген", 
+    secondName: "Бук", 
+     groupName: "2", 
+        biology: [0,2,5,8,7,5,6,0,5,"нб"], 
+        english: [3,3,3,3,3,3,3,3,3,3], 
+          music: ["нб",2,5,8,7,5,6,0,5,0],
+      chemistry: [0,2,5,8,7,5,6,"нб",5,0],
+        physics: [0,2,5,8,7,5,6,0,5,0]
+},
+ {
+     firstName: "Катерина", 
+    secondName: "Паук", 
+     groupName: "2", 
+        biology: [0,2,5,8,7,5,6,0,5,0], 
+        english: ["нб",2,5,8,7,5,6,0,5,0], 
+          music: [0,2,5,8,7,5,6,0,5,0],
+      chemistry: [0,2,5,8,7,5,6,"нб",5,0],
+        physics: [0,2,5,8,7,5,6,0,5,0]
+},
+ {
+     firstName: "Алла", 
+    secondName: "Грибюк", 
+     groupName: "2", 
+        biology: [0,2,5,8,7,5,6,0,5,0], 
+        english: ["нб",2,5,8,7,5,6,0,5,0], 
+          music: [0,2,5,8,7,5,6,"нб",5,0],
+      chemistry: [0,2,5,8,7,5,6,0,5,0],
+        physics: ["нб",2,5,8,7,5,6,0,5,0]
+},
+ {
+     firstName: "Іван", 
+    secondName: "Лисковець", 
+     groupName: "2", 
+        biology: [0,2,5,8,7,5,6,0,5,0], 
+        english: ["нб",2,5,8,7,5,6,0,5,0], 
+          music: [0,2,5,8,7,5,6,"нб",5,0],
+      chemistry: [0,2,5,8,7,5,6,0,5,0],
+        physics: [0,2,5,8,7,5,6,0,5,0]
+},
+ {
+     firstName: "Макар", 
+    secondName: "Вовкович", 
+     groupName: "2", 
+        biology: [0,2,5,8,7,5,6,0,5,0], 
+        english: [0,2,5,8,7,5,6,0,5,0], 
+          music: [0,2,5,8,7,5,6,"нб",5,0],
+      chemistry: ["нб",2,5,8,7,5,6,0,5,0],
+        physics: [0,2,5,8,7,5,6,0,5,0]
+},
+{
+     firstName: "Анатолій", 
+    secondName: "Петров", 
+     groupName: "3", 
+        biology: [0,2,5,8,7,5,6,0,5,0], 
+        english: ["нб",2,5,8,7,5,6,0,5,0], 
+          music: [0,2,5,8,7,5,6,0,5,"нб"],
+      chemistry: [0,2,5,8,7,5,6,0,5,0],
+        physics: [0,2,5,8,7,5,6,"нб",5,0]
+},
+ {
+     firstName: "Григорій", 
+    secondName: "Акулов", 
+     groupName: "3", 
+        biology: [0,2,5,8,7,5,6,0,5,0], 
+        english: ["нб",2,5,8,7,5,6,0,5,0], 
+          music: [0,2,5,8,7,5,6,"нб",5,0],
+      chemistry: [0,2,5,8,7,5,6,0,5,0],
+        physics: ["нб",2,5,8,7,5,6,0,5,0]
+},
+ {
+     firstName: "Олена", 
+    secondName: "Грибеневич", 
+     groupName: "3", 
+        biology: [0,2,5,8,7,5,6,0,5,0], 
+        english: [0,2,5,8,7,5,6,0,5,0], 
+          music: ["нб",2,5,8,7,5,6,0,5,0],
+      chemistry: [0,2,5,8,7,5,6,0,5,"нб"],
+        physics: [0,2,5,8,7,5,6,0,5,0]
+},
+ {
+     firstName: "Віталій", 
+    secondName: "Лисака", 
+     groupName: "3", 
+        biology: [0,2,5,8,7,5,6,"нб",5,0], 
+        english: [0,2,5,8,7,5,6,0,5,0], 
+          music: ["нб",2,5,8,7,5,6,0,5,0],
+      chemistry: [0,2,5,8,7,5,6,0,5,0],
+        physics: [0,2,5,8,7,5,6,"нб",5,0]
+},
+ {
+     firstName: "Михайло", 
+    secondName: "Вовкулака", 
+     groupName: "3", 
+        biology: ["нб",2,5,8,7,5,6,0,5,0], 
+        english: [0,2,5,8,7,5,6,0,5,0], 
+          music: ["нб",2,5,8,7,5,6,"нб",5,0],
+      chemistry: ["нб",2,5,8,7,5,6,0,5,0],
+        physics: [0,2,5,8,7,5,6,0,5,0]
+}
+];
+
+var searchByName = function(name) {
+    var result = [];
+    for (var i = 0; i < students.length; ++i) {
+        if (students [i].secondName == name) {
+           result.push(students [i]);
+       }
+    }
+    return result;
+   }
+   var searchByGroup = function(group) {
+    var result = [];
+    for (var i = 0; i < students.length; ++i) {
+        if (students [i].groupName == group) {
+           result.push(students [i]);
+       }
+    }
+    return result;
+   }
+   return {
+    searchByName : searchByName,
+    searchByGroup : searchByGroup
+  }; 
+})();
+
+function search(){
+  var res =[];
+  var notres = "Sorry";
+  var name = $('#name').val();
+  var resultText  = "<tr>" + "<td>" + "<b>Номер групи</b>" + "</td>" + "<td>" + "<b>Прізвище</b>" + "</td>"+ "<td>" + "<b>Iмя студента</b>" + "</td>"+ "<td>" + "<b>Оцінки по Біології</b>" + "</td>" + "<td>" + "<b>Оцінки по Англійській мові</b>" +"<td>" + "<b>Оцінки по Музиці</b>" +"<td>" + "<b>Оцінки по Хімії</b>" +"<td>" + "<b>Оцінки по Фізиці</b>" +"<b>Оцінки по Фізиці</b>"+"</tr>";
+     
+  res = academy.searchByName(name);
+  
+  for (var i = 0; i  < res.length; ++i){
+  	   resultText += "<tr>" + "<td>" + res[i].groupName + "</td>" + "<td>" +  res[i].secondName + "</td>" + "<td>" + res[i].firstName +"</td>" + "<td>" + res[i].biology + "</td>" + "<td>" + res[i].english + "</td>" + "<td>" + res[i].music + "</td>" + "<td>" + res[i].chemistry + "</td>" + "<td>" + res[i].physics + "</td>" +"</tr>";
+}
+  $("table.foundTable").html(resultText);
+};
+
+
+function globalStatistic(){
+			var res = academy.length;
+			var sum = 0;
+			var count = 0;
+			var gS = "<h3>" + "Общая статистика" + "</h3>";
+
+			for (var i = 0; i < academy.length; i++) {
+				if (academy.res[i].rating != "нб") {
+					sum += academy.res[i].rating;
+					count += 1;
+				}
+				
+			}
+			sum = (sum / count).toFixed(2); //Середній бал по всім групам
+			gS += "<p>" + "<b>Количество студентов: </b>" + res + " <b>средний бал составляет: </b>" + sum + "</p>"
+			gS += "<div class='row'>";
+			for (var j = 1; j <= 3; j++) {
+				gS += "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'><table class='statisticTable'><tr><td>Номер группы</td><td>Средний бал</td><td>Количество пропусков</td></tr>";
+				count = 0;
+				sum = 0;
+				var sumOuts = 0, countRating = 0;
+				for (var i = 0; i < academy.length; i++) {				
+					if (academy.res[i].group == j) {						
+						if (academy.res[i].rating != "нб"){
+							sum += academy.res[i].rating;
+							countRating++;
+						} else {
+							sumOuts++;
+						}				
+						
+					}										
+				}					
+				sum = (sum / countRating).toFixed(2);
+				gS += "<tr><td>" + j + "</td><td>" + sum + "</td><td>" + sumOuts + "</td></tr></table></div>";		
+			}
+			gS += "</div>";
+
+			$("div.groupStatistic").html(gS);		
+		}
+		$(document).ready(function() {
+			$("table.foundStudentsTable").hide();			
+			$("a.click").click(function(){
+				searchStudents();
+				$(this).parent().find("table.foundStudentsTable").slideToggle();
+			});
+		});
+		$(document).ready(function() {
+			$("table.foundTable").hide();			
+			$("a.clickFN").click(function(){
+				search();
+				$(this).parent().find("table.foundTable").slideToggle();
+			});
+		});
+		$(document).ready(function() {
+			$("div.groupStatistic").hide();			
+			$("a.clickS").click(function(){
+				globalStatistic();
+				$(this).parent().find("div.groupStatistic").slideToggle();
+			});
+		});
+
+
+
+
+
+
+
+/*
+var countAvgMarkStudent = function(name) {
+	var name = $('#name').val();
+	var averageRatingSubject = "";
+	var sumRating = 0;
+    var result = '';
+    var avgScore = 0;
+res = academy.searchByName(name);
+ for (var i = 0; i < res.length; i++) {
+ 	result += '<h1>' + res[i].secondName + '</h1><div class="table-responsive"><table class="table">' + 
+					'<thead><tr><th>Предмет</th><th colspan="10">Оцінки</th><th colspan="1">Середній бал</th><th colspan="1">К-сть пропусків</th></thead>' + 
+					'<tbody>'
+ 	for (var j = 0; j < res[i].music.length; j++){
+ 		result += '<td>' + res[i].music[j] + '</td>';
+ 		if (res[i].music[j]== "нб"){
+ 		n++;
+ 	} else {
+ 			sumRating += (res[i].music[j]);
+
+ 	}
+	}
+	
+			
+
+	$("#result").html(averageRatingSubject);
+}*/
+
+	</script>	
+ </body>
+ </html>
