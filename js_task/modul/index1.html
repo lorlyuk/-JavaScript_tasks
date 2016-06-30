@@ -10,29 +10,27 @@
 </head>
 <body>
 	<nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <button onclick="academy.displayGroup('Група 1')" value="">Група 1</button>
-        </div>
-        <div class="col-md-3">
-          <button onclick="academy.displayGroup('Група 2')" value="">Група 2</button>
-        </div>
-        <div class="col-md-3">
-          <button onclick="academy.displayGroup('Група 3')" value="">Група 3</button>
-        </div>
-        <div class="col-md-3">
-          <button onclick="academy.displayGeneralGroupStat()">Загальна стастика</button>
-        </div>
-      </div>
-    </div>  
+    <div class="title">
+   <h1>Дані по навчанню студентів трьох груп Національного Університету</h1> 
+    </div>
+     
     <div class="col-md-12 searchByName">
       <div class="form-group">
         <label>Пошук по імені</label>
         <input type="text" name="" id="name">
-        <button type="submit" onclick="academy.displayStudent()">Пошук</button>
+        <button type="submit" onclick="academy.displayStudent()">Шукати</button>
       </div>
     </div>
+    <div class="col-md-12 searchByGroup">
+      <div class="form-group">
+        <label>Пошук по групі</label>
+        <input type="text" name="" id="group">
+        <button type="submit" onclick="academy.displayGroup()">Шукати</button>
+      </div>
+    </div> 
+    <div class="col-md-12 button_down">
+          <button onclick="academy.displayGeneralGroupStat()">Загальна стастика</button>
+        </div>
   </nav>
   <main>
     <div class="container">
@@ -108,7 +106,7 @@
               },
               {
                   name: "english",
-                  marks: [0,2,5,8,7,5,6,"нб",5,0]
+                  marks: [6,6,6,6,6,6,6,"нб",6,6]
               },
               {   name: " music" ,
                   marks:["нб",2,5,8,"нб",5,6,"нб",5,0]
@@ -130,7 +128,7 @@
        subject: [ 
               {
                   name: "biology",    
-                  marks: ["нб",2,5,8,7,5,6,0,5,0]
+                  marks: ["нб",2,5,8,7,5,6,0,5,9]
               },
               {
                   name: "english",
@@ -208,18 +206,18 @@
        subject: [ 
               {
                   name: "biology",    
-                  marks: ["нб",2,5,8,7,5,6,0,5,0]
+                  marks: ["нб",2,5,8,7,5,6,0,5,9]
               },
               {
                   name: "english",
-                  marks: [0,2,5,8,7,5,6,"нб",5,0]
+                  marks: [9,2,5,8,7,5,6,"нб",5,9]
               },
               {   name: " music" ,
-                  marks:["нб",2,5,8,"нб",5,6,"нб",5,0]
+                  marks:["нб",2,5,8,"нб",5,6,"нб",5,9]
               },
               {
                    name: "chemistry",
-                   marks: ["нб",2,5,8,7,5,6,"нб",5,0]
+                   marks: ["нб",2,5,8,7,5,6,"нб",5,9]
               },
               {
                   name: "physics",
@@ -245,7 +243,7 @@
               },
               {
                    name: "chemistry",
-                   marks: ["нб",2,5,8,7,5,6,"нб",5,0]
+                   marks: ["нб",2,5,8,7,5,6,"нб",5,5]
               },
               {
                   name: "physics",
@@ -260,7 +258,7 @@
       subject: [ 
             {
                 name: "biology",    
-                marks: ["нб",2,5,8,7,5,6,0,5,0]
+                marks: ["нб",2,5,8,7,5,6,5,5,0]
             },
             {
                 name: "english",
@@ -275,7 +273,7 @@
             },
             {
                 name: "physics",
-                marks: ["нб",2,5,8,7,5,6,"нб",5,0]
+                marks: ["нб",2,5,8,7,5,6,"нб",5,5]
             }
     ]
    },
@@ -286,14 +284,14 @@
         subject: [ 
             {
                 name: "biology",    
-                marks: ["нб",2,5,8,7,5,6,0,5,0]
+                marks: ["нб",2,5,8,7,5,6,4,5,0]
             },
             {
                 name: "english",
-                marks: [0,2,5,8,7,5,6,"нб",5,0]
+                marks: [0,2,5,8,7,5,6,"нб",5,4]
             },
             {   name: " music" ,
-                marks:["нб",2,5,8,"нб",5,6,"нб",5,0]
+                marks:["нб",2,5,8,"нб",5,6,"нб",5,4]
             },
             {
                  name: "chemistry",
@@ -301,7 +299,7 @@
             },
             {
                 name: "physics",
-                marks: ["нб",2,5,8,7,5,6,"нб",5,0]
+                marks: ["нб",2,5,8,7,5,6,"нб",5,4]
             }
             ]
     },
@@ -338,11 +336,11 @@
         subject: [ 
             {
                 name: "biology",    
-                marks: ["нб",2,5,8,7,5,6,0,5,0]
+                marks: ["нб",2,5,8,7,5,6,3,5,3]
             },
             {
                 name: "english",
-                marks: [0,2,5,8,7,5,6,"нб",5,0]
+                marks: [0,2,5,8,7,5,6,"нб",5,3]
             },
             {   name: " music" ,
                 marks:["нб",2,5,8,"нб",5,6,"нб",5,0]
@@ -364,7 +362,7 @@
         subject: [ 
               {
                   name: "biology",    
-                  marks: ["нб",2,5,8,7,5,6,0,5,0]
+                  marks: ["нб",2,5,8,7,5,6,0,5,]
               },
               {
                   name: "english",
@@ -390,14 +388,14 @@
         subject: [ 
               {
                   name: "biology",    
-                  marks: ["нб",2,5,8,7,5,6,0,5,0]
+                  marks: ["нб",2,5,8,7,5,6,"нб",5,"нб"]
               },
               {
                   name: "english",
-                  marks: [0,2,5,8,7,5,6,"нб",5,0]
+                  marks: ["нб",2,5,8,7,5,6,"нб",5,"нб"]
               },
               {   name: " music" ,
-                  marks:["нб",2,5,8,"нб",5,6,"нб",5,0]
+                  marks:["нб",2,5,8,"нб",5,6,"нб",5,"нб"]
               },
               {
                    name: "chemistry",
@@ -440,24 +438,14 @@ var searchByName = function(name) {
     var result = [];
     for (var i = 0; i < students.length; ++i) {
         if (students [i].secondName == name) {
-           result.push(students [i].secondName);
-       }
-    }
-    return result;
-   }
-
-
-   var searchByGroup = function(group) {
-    var result = [];
-    for (var i = 0; i < students.length; ++i) {
-        if (students [i].groupName == group) {
            result.push(students [i]);
        }
+
     }
     return result;
    }
-   
- 
+
+    
 function displayStudent() {
     var name = $('#name').val();
     if (name) {
@@ -474,7 +462,7 @@ function displayStudent() {
 
     for (var i = 0; i < resultByStudent.length; ++i) {
       
-             result += '<h1>' + resultByStudent[i] + '</h1><div class="table-responsive"><table class="table">' + 
+             result += '<h2>' + resultByStudent[i].firstName + " " + resultByStudent[i].secondName  + '</h2><div class="table-responsive"><table class="table">' + 
           '<thead><tr><th>Предмет</th><th colspan="10">Оцінки</th><th colspan="1">Середній бал</th><th colspan="1">К-сть пропусків</th></thead>' + 
           '<tbody>'
       
@@ -512,20 +500,30 @@ function displayStudent() {
   $('#ResultDisplay').html(result);
   }
 
-var getGroup = function (groupName) {
+var searchByGroup = function (groupName) {
+ var groupName = $('#group').val();
+    if (groupName) {
+      var resultByStudent = searchByName(name);
+    }
 
     var result = [];
       for (var i = 0; i < students.length; ++i){
         if (students[i].groupName == groupName){
-          
-            result.push(students[i]);
-          }
+             result.push(students[i]);
+            } 
         }
       return result;
+
   };
 
   function displayGroup (groupName) {
-    var resultByGroup = getGroup(groupName);
+
+    var groupName = $('#group').val();
+    if (groupName) {
+      var resultByGroup = searchByGroup(groupName);
+    }
+
+    
     
     var result = '<h1>' + groupName + '</h1>';
     var sum = 0;
@@ -538,7 +536,7 @@ var getGroup = function (groupName) {
     var sumOfSubjectsAllStudent = 0;
     for (var i = 0; i < resultByGroup.length; ++i) {
 
-        result += '<h2>' + resultByGroup[i] + '</h2><div class="table-responsive"><table class="table">' + 
+        result += '<h2>' + resultByGroup[i].firstName + " " + resultByGroup[i].secondName+ '</h2><div class="table-responsive"><table class="table">' + 
         '<thead><tr><th>Предмет</th><th colspan="10">Оцінки</th><th colspan="1">Середній бал</th><th colspan="1">К-сть пропусків</th></thead>' + 
         '<tbody>'
 
@@ -572,6 +570,9 @@ var getGroup = function (groupName) {
     avgGeneralGroup = (avgGeneralGroup / sumOfSubjectsAllStudent).toFixed(2);
     result += '<div class="statOfGroup">К-сть пропусків в групі: <b>' + nGeneralGroup + '</b><br>Середній бал групи: <b>' + avgGeneralGroup + '</b></div>'
 
+    if (!result) {
+      result = 'Вибачте. Такої групи не знайдено.'
+    }   
     $('#ResultDisplay').html(result);
     }
 
@@ -590,8 +591,7 @@ var getGroup = function (groupName) {
     var sum = 0;
     var n = 0;
     var avgScore = 0;
-    var nGeneralStudent = 0;
-
+    
     for (var i = 0; i < resultByAll.length; ++i) {
         for (var j = 0; j < resultByAll[i].subject.length; ++j) {
           for (var k = 0; k < resultByAll[i].subject[j].marks.length; ++k) {
@@ -601,11 +601,10 @@ var getGroup = function (groupName) {
               sum += (resultByAll[i].subject[j].marks[k]);
             }
           }
-          nGeneralStudent += n;
       }
     }
     avgScore = (sum / (k*j*i - n)).toFixed(2);
-    result += '<h1>Статистика по всіх студентах</h1><div class="statOfGroup">К-сть пропусків: <b>' + nGeneralStudent + '</b><br>Середній бал: <b>' + avgScore + '</b></div>'
+    result += '<h1>Статистика по всіх студентах</h1><div class="statOfGroup">К-сть пропусків: <b>' + n + '</b><br>Середній бал: <b>' + avgScore + '</b></div>'
 
     $('#ResultDisplay').html(result);
   }
@@ -613,7 +612,7 @@ var getGroup = function (groupName) {
   return {    
   searchByName : searchByName,
   displayStudent : displayStudent,
-  getGroup : getGroup,
+  searchByGroup :searchByGroup,
   displayGroup : displayGroup,
   getAll : getAll,
   displayGeneralGroupStat : displayGeneralGroupStat
