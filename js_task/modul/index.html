@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <title>JS Task 1</title>
+</head>
+<body>
+  <div class="container-fluid">
+<h1>Студенти Університету "ОА"</h1>
+
+   <p>Вкажіть імя студента</p>
+   <input type="text" id="name">
+   <div style="margin-top:20px;margin-left: 20px;">
+    <button id="idSeach" onclick="search()">Search</button>
+   </div>
+     <div class="foundText">
+          <table class="foundTable"></table>
+        </div>
+</div>
+
+
+ <script type="text/javascript">
+
+var academy = (function (){
+ var students = [
+  { name : "Іванов А",
+   group : 1,
+   subject: "Математика",
+   rating: 5
+  },
+  { name : "Іванов А",
+   group : 1,
+   subject: "Математика",
+   rating: "нб"
+  },
+  { name : "Іванов А",
+   group : 1,
+   subject: "Математика",
+   rating: 5
+  },
+  { name : "Іванов А",
+   group : 1,
+   subject: "Математика",
+   rating: 4
+  },
+  { name : "Іванов А",
+   group : 1,
+   subject: "Математика",
+   rating: 5
+  },
+  { name : "Іванов А",
+   group : 1,
+   subject: "Читання",
+   rating: 5
+  },
+  { name : "Іванов А",
+   group : 1,
+   subject: "Читання",
+   rating: 4
+  },
+ { name : "Іванов А",
+   group : 1,
+   subject: "Читання",
+   rating: 5
+  },
+  { name : "Іванов А",
+   group : 1,
+   subject: "Читання",
+   rating: 4
+  },
+  { name : "Іванов А",
+   group : 1,
+   subject: "Читання",
+   rating: 5
+  },
+{ name : "Іванов А",
+   group : 1,
+   subject: "фізкультура",
+   rating: 5
+  },
+{ name : "Іванов А",
+   group : 1,
+   subject: "фізкультура",
+   rating: "нб"
+  },
+ { name : "Іванов А",
+   group : 1,
+   subject: "фізкультура",
+   rating: 5
+  },
+{ name : "Іванов А",
+   group : 1,
+   subject: "фізкультура",
+   rating: 5
+  },
+{ name : "Іванов А",
+   group : 1,
+   subject: "фізкультура",
+   rating: "нб"
+  },
+  { name : "Борисов А",
+   group : 2,
+   subject: "Математика",
+   rating: 5
+  },
+  { name : "Борисов А",
+   group : 2,
+   subject: "Математика",
+   rating: "нб"
+  },
+  { name : "Борисов А",
+   group : 2,
+   subject: "Математика",
+   rating: 5
+  },
+  { name : "Борисов А",
+   group : 2,
+   subject: "Математика",
+   rating: 4
+  },
+  { name : "Борисов А",
+   group : 2,
+   subject: "Математика",
+   rating: 5
+  },
+  { name : "Борисов А",
+   group : 2,
+   subject: "Читання",
+   rating: 5
+  },
+  { name : "Борисов А",
+   group : 2,
+   subject: "Читання",
+   rating: 4
+  },
+ { name : "Борисов А",
+   group : 2,
+   subject: "Читання",
+   rating: 5
+  },
+  { name : "Борисов А",
+   group : 2,
+   subject: "Читання",
+   rating: 4
+  },
+  { name : "Борисов А",
+   group : 2,
+   subject: "Читання",
+   rating: 5
+  },
+{ name : "Борисов А",
+   group : 2,
+   subject: "фізкультура",
+   rating: 5
+  },
+{ name : "Борисов А",
+   group : 2,
+   subject: "фізкультура",
+   rating: "нб"
+  },
+  { name : "Борисов А",
+   group : 2,
+   subject: "фізкультура",
+   rating: 5
+  },
+ { name : "Борисов А",
+   group : 2,
+   subject: "фізкультура",
+   rating: 5
+  },
+ { name : "Борисов А",
+   group : 2,
+   subject: "фізкультура",
+   rating: "нб"
+  },
+{ name : "Маркун В",
+   group : 3,
+   subject: "Математика",
+   rating: 3
+  },
+  { name : "Маркун В",
+   group : 3,
+   subject: "Математика",
+   rating: "нб"
+  },
+  { name : "Маркун В",
+   group : 3,
+   subject: "Математика",
+   rating: 3
+  },
+  { name : "Маркун В",
+   group : 3,
+   subject: "Математика",
+   rating: 4
+  },
+  { name : "Маркун В",
+   group : 3,
+   subject: "Математика",
+   rating: 3
+  },
+  { name : "Маркун В",
+   group : 3,
+   subject: "Читання",
+   rating: 5
+  },
+  { name : "Маркун В",
+   group : 3,
+   subject: "Читання",
+   rating: 4
+  },
+ { name : "Маркун В",
+   group : 3,
+   subject: "Читання",
+   rating: 3
+  },
+  { name : "Маркун В",
+   group : 3,
+   subject: "Читання",
+   rating: 4
+  },
+  { name : "Маркун В",
+   group : 3,
+   subject: "Читання",
+   rating: 3
+  },
+{ name : "Маркун В",
+   group : 3,
+   subject: "фізкультура",
+   rating: 5
+  },
+{ name : "Маркун В",
+   group : 3,
+   subject: "фізкультура",
+   rating: "нб"
+  },
+ { name : "Маркун В",
+   group : 3,
+   subject: "фізкультура",
+   rating: 3
+  },
+ { name : "Маркун В",
+   group : 3,
+   subject: "фізкультура",
+   rating: 5
+  },
+ { name : "Маркун В",
+   group : 3,
+   subject: "фізкультура",
+   rating: "нб"
+  },
+
+ ];
+
+  var searchByName = function(name){
+    var result = [];
+    for (var i = 0; i < students.length; ++i) {
+        if (students [i].name == name) {
+           result.push(students [i]);
+       }
+    }
+    return result;
+   }
+  return {
+ searchByName: searchByName
+}
+})();
+function search(){
+  var res =[];
+  var notres = "Sorry";
+  var name = $('#name').val();
+  var resultText  = "<tr>" + "<td>" + "<b>Имя студента</b>" + "</td>" + "<td>" + "<b>Номер группы</b>" + "</td>"+ "<td>" + "<b>Название предмета</b>" + "</td>"+ "<td>" + "<b>Оценка</b>" + "</td>" + "</tr>";
+     
+  res = academy.searchByName(name)
+  
+  
+  var resultText = '';
+  for (var i = 0; i  < res.length; ++i){
+   resultText += "<tr>" + "<td>" + res[i].name + "</td>" + "<td>" +  res[i].group + "</td>" + "<td>" + res[i].subject +"</td>" + "<td>" + rest[i].rating + "</td>" + "</tr>";
+ }
+  $("table.foundTable").html(resultText);
+  }
+
+
+ </script>	
+ </body>
+ </html>
