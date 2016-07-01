@@ -497,8 +497,8 @@ function displayStudent() {
       result = 'Вибачте. Такого студента не знайдено.'
     }     
 
-  $('#ResultDisplay').html(result);
-  }
+    $('#ResultDisplay').html(result);
+}
 
 var searchByGroup = function (groupName) {
  var groupName = $('#group').val();
@@ -523,9 +523,7 @@ var searchByGroup = function (groupName) {
       var resultByGroup = searchByGroup(groupName);
     }
 
-    
-    
-    var result = '<h1>' + groupName + '</h1>';
+    var result = '<h1>' + "Група №" + " " + groupName + '</h1>';
     var sum = 0;
     var n = 0;
     var avgScore = 0;
@@ -570,9 +568,7 @@ var searchByGroup = function (groupName) {
     avgGeneralGroup = (avgGeneralGroup / sumOfSubjectsAllStudent).toFixed(2);
     result += '<div class="statOfGroup">К-сть пропусків в групі: <b>' + nGeneralGroup + '</b><br>Середній бал групи: <b>' + avgGeneralGroup + '</b></div>'
 
-    if (!result) {
-      result = 'Вибачте. Такої групи не знайдено.'
-    }   
+      
     $('#ResultDisplay').html(result);
     }
 
@@ -620,130 +616,6 @@ var searchByGroup = function (groupName) {
 
 })();
 
-
-
-
-
-
-
-
-
-
-/*
-
-
-function search(){
-  var res =[];
-  var notres = "Sorry";
-  var name = $('#name').val();
-  var resultText  = "<tr>" + "<td>" + "<b>Номер групи</b>" + "</td>" + "<td>" + "<b>Прізвище</b>" + "</td>"+ "<td>" + "<b>Iмя студента</b>" + "</td>"+ "</tr>" 
-     
-  res = searchByName(name);
-  
-  for (var i = 0; i  < res.length; ++i){
-  	   resultText += "<tr>" + "<td>" + res[i].groupName + "</td>" + "<td>" +  res[i].secondName + "</td>" + "<td>" + res[i].firstName +"</td>" + "<td>" + res[i].biology + "</td>" + "<td>" + res[i].english + "</td>" + "<td>" + res[i].music + "</td>" + "<td>" + res[i].chemistry + "</td>" + "<td>" + res[i].physics + "</td>" +"</tr>";
-}
-  $("table.foundTable").html(resultText);
-};
-
-
-function globalStatistic(){
-			var res = academy.length;
-			var sum = 0;
-			var count = 0;
-			var gS = "<h3>" + "Общая статистика" + "</h3>";
-
-			for (var i = 0; i < academy.length; i++) {
-				if (academy.res[i].rating != "нб") {
-					sum += academy.res[i].rating;
-					count += 1;
-				}
-				
-			}
-			sum = (sum / count).toFixed(2); //Середній бал по всім групам
-			gS += "<p>" + "<b>Количество студентов: </b>" + res + " <b>средний бал составляет: </b>" + sum + "</p>"
-			gS += "<div class='row'>";
-			for (var j = 1; j <= 3; j++) {
-				gS += "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'><table class='statisticTable'><tr><td>Номер группы</td><td>Средний бал</td><td>Количество пропусков</td></tr>";
-				count = 0;
-				sum = 0;
-				var sumOuts = 0, countRating = 0;
-				for (var i = 0; i < academy.length; i++) {				
-					if (academy.res[i].group == j) {						
-						if (academy.res[i].rating != "нб"){
-							sum += academy.res[i].rating;
-							countRating++;
-						} else {
-							sumOuts++;
-						}				
-						
-					}										
-				}					
-				sum = (sum / countRating).toFixed(2);
-				gS += "<tr><td>" + j + "</td><td>" + sum + "</td><td>" + sumOuts + "</td></tr></table></div>";		
-			}
-			gS += "</div>";
-
-			$("div.groupStatistic").html(gS);		
-		}
-		$(document).ready(function() {
-			$("table.foundStudentsTable").hide();			
-			$("a.click").click(function(){
-				searchStudents();
-				$(this).parent().find("table.foundStudentsTable").slideToggle();
-			});
-		});
-		$(document).ready(function() {
-			$("table.foundTable").hide();			
-			$("a.clickFN").click(function(){
-				search();
-				$(this).parent().find("table.foundTable").slideToggle();
-			});
-		});
-		$(document).ready(function() {
-			$("div.groupStatistic").hide();			
-			$("a.clickS").click(function(){
-				globalStatistic();
-				$(this).parent().find("div.groupStatistic").slideToggle();
-			});
-		});
-return {
-    searchByName : searchByName,
-    searchByGroup : searchByGroup
-     }; 
-})();
-
-
-
-
-
-/*
-var countAvgMarkStudent = function(name) {
-	var name = $('#name').val();
-	var averageRatingSubject = "";
-	var sumRating = 0;
-    var result = '';
-    var avgScore = 0;
-res = academy.searchByName(name);
- for (var i = 0; i < res.length; i++) {
- 	result += '<h1>' + res[i].secondName + '</h1><div class="table-responsive"><table class="table">' + 
-					'<thead><tr><th>Предмет</th><th colspan="10">Оцінки</th><th colspan="1">Середній бал</th><th colspan="1">К-сть пропусків</th></thead>' + 
-					'<tbody>'
- 	for (var j = 0; j < res[i].music.length; j++){
- 		result += '<td>' + res[i].music[j] + '</td>';
- 		if (res[i].music[j]== "нб"){
- 		n++;
- 	} else {
- 			sumRating += (res[i].music[j]);
-
- 	}
-	}
-	
-			
-
-	$("#result").html(averageRatingSubject);
-}*/
-
-	</script>	
+</script>	
  </body>
  </html>
